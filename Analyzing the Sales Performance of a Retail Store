@@ -1,0 +1,19 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the data into a pandas dataframe
+df = pd.read_csv('sales_data.csv')
+
+# Create a line chart of the monthly sales performance
+sns.lineplot(data=df, x='month', y='sales')
+plt.title('Monthly sales performance')
+plt.xlabel('Month')
+plt.ylabel('Sales')
+plt.show()
+
+# Calculate the total sales and average sales per day
+total_sales = df['sales'].sum()
+average_sales = df['sales'].mean()
+print('Total sales:', total_sales)
+print('Average sales per day:', average_sales)
